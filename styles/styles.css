@@ -1,0 +1,142 @@
+:root {
+  --background: #fff;
+  --primary: #ff3c00;
+  --gray-100: #f9f9f9;
+  --gray-300: #4a525d;
+  --gray-600: #637381;
+  --gray-900: #1e1e1e;
+  --text-base: 16px;
+  --text-color: #1e1e1e;
+}
+/* Resetar CSS */
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
+  color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+}
+/* 
+  Produtos
+*/
+
+main {
+  display: flex;
+}
+
+#products-container {
+  flex: 1;
+  padding: 24px 42px;
+}
+
+#products-container header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+#products-container header button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: none;
+}
+
+#products-container header button:hover {
+  opacity: 0.8;
+}
+
+#content-products {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* .product-item {
+  display: flex;
+  flex-direction: column;
+} */
+#list-products {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.product-item img {
+  margin-bottom: 16px;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.product-details strong {
+  font-size: 14px;
+}
+
+.product-details span {
+  font-size: 14px;
+  color: var(--gray-300);
+}
+
+.product-price {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.product-price strong {
+  color: var(--primary);
+  font-size: 14px;
+}
+.product-price button {
+  padding: 12px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+/**
+  Carrinho
+*/
+
+#cart-container {
+  min-height: 100vh;
+  background: var(--gray-100);
+  padding: 96px 48px;
+}
+
+#cart-container h4 {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+/**
+  MEDIA QUERIES
+  MOBILE | Tablet
+*/
+
+@media (max-width: 768px) {
+  #cart-container {
+    display: none;
+  }
+
+  #list-products {
+    grid-template-columns: 1fr;
+  }
+
+  #products-container header {
+    justify-content: space-between;
+  }
+
+  #products-container header button {
+    display: block;
+  }
+}
