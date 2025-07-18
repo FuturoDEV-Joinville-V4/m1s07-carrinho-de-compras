@@ -7,7 +7,6 @@ async function iniciarProjeto() {
 
     try {
         const produtos = await getProducts()
-
         produtos.forEach((produto) => {
             const produtoInstancia = new Product(produto) // criando uma instância
 
