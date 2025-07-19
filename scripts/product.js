@@ -38,6 +38,8 @@ export class Product {
 
     /**
      * Responsavel por montar o elemento HTML
+     * JSDOC
+     * @param {Function} onAddCart - Função responsavel por executar evento de clique
      */
     produtoElemento(onAddCart) {
         /** Container */

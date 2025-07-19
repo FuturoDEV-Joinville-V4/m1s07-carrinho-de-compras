@@ -1,18 +1,37 @@
 import { getProducts } from './api.js'
 import { Product } from './product.js'
+import { Cart } from './cart.js'
+import { renderCart } from './ui.js'
 
 const listaProducts = document.getElementById('list-products')
+const carrinho = new Cart()
+
 var produtos;
-var carrinho = [];
 
 function adicionarProdutoAoCarrinho(produto) {
-    // adicionar ao carrinho
-    // console.log('recebendo o produto', produto)
-    carrinho.push(produto)
+    let itemCart = {
+        id: produto.id,
+        title: produto.title,
+        price: produto.price,
+        quantity: 1,
+    }
 
-    console.log(carrinho)
+    carrinho.addItem(itemCart)    
 }
 
+/** 
+ * Explicação de localStorage
+ */
+// const test = [1,2,3]
+// const parsed = JSON.stringify(test)
+// localStorage.setItem('carrinho', parsed)
+
+// localStorage.removeItem('carrinho')
+// localStorage.clear()
+// const carrinhoString = localStorage.getItem('carrinho')
+// const objJs = JSON.parse(carrinhoString)
+
+// console.log("RECUPERANDO O VALOR",objJs )
 
 async function iniciarProjeto() {
     try {
@@ -38,9 +57,12 @@ async function iniciarProjeto() {
             listaProducts.appendChild(produtoElemento)
         });
     } catch (error) {
-        alert('Error ao carregar os produtos')
+        //alert('Error ao carregar os produtos')
     }
    
+    // Carregar ui do carrinho
+    
+    renderCart(carrinho.getItems())
 }
 
 /** 
