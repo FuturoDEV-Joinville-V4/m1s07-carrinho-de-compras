@@ -37,5 +37,5 @@ export function renderCart(items) {
 
         cartItemsElemento.appendChild(cartItemElement)
     });
-    // console.log('renderizando carrinho')
+    
 }
