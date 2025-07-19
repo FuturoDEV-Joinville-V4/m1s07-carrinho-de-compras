@@ -38,8 +38,10 @@ export class Product {
 
     /**
      * Responsavel por montar o elemento HTML
+     * JSDOC
+     * @param {Function} onAddCart - Função responsavel por executar evento de clique
      */
-    produtoElemento() {
+    produtoElemento(onAddCart) {
         /** Container */
         const cardElemento = document.createElement('div');
         cardElemento.classList.add('product-item');
@@ -69,6 +71,8 @@ export class Product {
         /** Button */
         const buttonElement = document.createElement('button');
         buttonElement.setAttribute('data-id', this.id)
+        buttonElement.addEventListener('click', onAddCart)
+
         /** iCONE DO BUTTON */
         const cartIcon = document.createElement('img');
         cartIcon.setAttribute('src', './assets/icons/cart.svg'); // Caminho do ícone do carrinho
@@ -89,4 +93,5 @@ export class Product {
 
         return cardElemento;
     }
+
 }
