@@ -64,6 +64,14 @@ async function iniciarProjeto() {
     // Carregar ui do carrinho
     
     renderCart(carrinho.getItems())
+
+    const buttonFinalizarCompra = document.querySelector('.cart-summary button')
+
+    buttonFinalizarCompra.addEventListener('click', () => {
+        if(carrinho.getItems().length > 0) {
+            location.href = '/compra-sucesso.html'
+        }
+    })
 }
 
 /** 

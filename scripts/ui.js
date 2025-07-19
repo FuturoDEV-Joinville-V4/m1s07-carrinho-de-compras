@@ -44,6 +44,6 @@ export function renderCart(items) {
 
     // apresentar o total
     const totalElemento = document.querySelector('.cart-summary strong')
-
+    
     totalElemento.textContent = formatCurreny(total)
 }
