@@ -69,7 +69,7 @@ async function iniciarProjeto() {
 
     buttonFinalizarCompra.addEventListener('click', () => {
         if(carrinho.getItems().length > 0) {
-            location.href = '/compra-sucesso.html'
+            location.href = './compra-sucesso.html'
         }
     })
 }
