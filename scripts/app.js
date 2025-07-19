@@ -69,7 +69,10 @@ async function iniciarProjeto() {
 
     buttonFinalizarCompra.addEventListener('click', () => {
         if(carrinho.getItems().length > 0) {
-            location.href = './compra-sucesso.html'
+            const pathname = location.pathname
+            const urlbase = location.origin
+
+            location.href = `${urlbase}${pathname}compra-sucesso.html`
         }
     })
 }
