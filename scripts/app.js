@@ -17,6 +17,7 @@ function adicionarProdutoAoCarrinho(produto) {
     }
 
     carrinho.addItem(itemCart)    
+    renderCart(carrinho.getItems())
 }
 
 /** 
